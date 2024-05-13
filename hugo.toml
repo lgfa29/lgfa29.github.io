@@ -1,0 +1,35 @@
+baseURL = "https://luiz.aoqui.dev/"
+theme = "PaperMod"
+title = "Luiz Aoqui"
+defaultContentLanguage = 'pt-BR'
+defaultContentLanguageInSubdir = true
+
+[languages]
+[languages.pt-BR]
+contentDir = 'content/pt-br'
+languageCode = 'pt-BR'
+languageName = 'Português'
+weight = 1
+
+[languages.pt-BR.params]
+dateFormat = "02 January 2006"
+
+[languages.pt-BR.params.editPost]
+Text = "Sugerir mudança"
+URL = "https://github.com/lgfa29/lgfa29.github.io/tree/main/content/pt-br"
+appendFilePath = true
+
+[languages.en]
+contentDir = 'content/en'
+languageCode = 'en-CA'
+languageName = 'English'
+weight = 2
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+
+[params]
+ShowRssButtonInSectionTermList = true
+ShowShareButtons = true
