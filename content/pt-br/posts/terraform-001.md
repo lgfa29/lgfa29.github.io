@@ -1,14 +1,14 @@
 ---
 title: "Terraform do Ponto de Vista de um Desenvolvedor"
-date: "2024-05-013T00:00:00-04:00"
+date: "2024-05-13T00:00:00-04:00"
 tags: ["terraform", "cloud"]
 ---
 
 [Terraform](https://www.terraform.io/) é uma ferramenta bastante utilizada no
 mundo DevOps. Eu comecei a usar por volta de 2015/16, na versão 0.6 ou 0.7 e,
 nessa época, ainda era uma ferramenta em desenvolvimento e pouco conhecida. Como
-não existia muito material disponível sobre o assunto, e eu acabei aprendendo a
-usar do meu jeito.
+não existia muito material disponível sobre o assunto, eu acabei aprendendo a
+usar meio que do meu jeito.
 
 Com o tempo, eu percebi que algumas coisas que eu fazia e a forma como pensava
 sobre Terraform era um pouco diferente das outras pessoas. Eu acho que parte
@@ -70,7 +70,7 @@ precisar de dez. Essas VMs também terão papéis diferentes, então duas delas
 podem ser menores do que as outras.
 
 Apesar de cada mudança ser relativamente fácil de fazer pelo painel web, a soma
-de todas as mudanças necessárias se torna um desafio pois o processo é manual,
+de todas as mudanças necessárias se torna um desafio, pois o processo é manual,
 lento e suscetível a erros. Um formulário preenchido com uma letra errada e a
 nossa aplicação pode parar de funcionar.
 
@@ -134,7 +134,7 @@ Dijkstra](https://pt.wikipedia.org/wiki/Edsger_Dijkstra) as descreveu como:
 > _O objetivo de uma abstração não é ser vaga, mas criar um novo nível semântico
   onde é possível ser absolutamente preciso._
 
-Um bife a parmegiana existe em um nível acima da carne, do queijo, tomate,
+Um bife a parmegiana existe em um nível acima da carne, queijo, tomate,
 frigideira etc. É uma descrição _precisa_ do que queremos. Mesmo que ela não
 exista até que seja preparada, uma pessoa entende _exatamente_ o que queremos
 quando pedimos uma em um restaurante.
@@ -179,7 +179,7 @@ Essa interface é conhecida como **interface de usuário** (_user interface_), o
 _UI_. Na seção anterior, nós utilizamos uma _UI_ -- o painel do provedor de
 nuvem -- para criar a nossa infraestrutura.
 
-Como o foco de uma UI é de ser acessado por uma pessoa, o formato e tipos de
+Como o foco de uma UI é ser acessada por uma pessoa, o formato e tipos de
 dados retornados por estas interfaces não são tão fáceis de serem processados em
 código.
 
@@ -519,7 +519,7 @@ trata esse caso. Além de nos preocuparmos com o caso positivo -- o que o script
 está fazendo -- podemos também pensar no caso negativo -- o que o script _não
 está fazendo_.
 
-Nesse caso, o script _não está criado a `vm-10`_, portanto devemos apagá-la,
+Nesse caso, o script _não está criando a `vm-10`_, portanto devemos apagá-la,
 mesmo que isso não esteja explicitamente escrito em um comando.
 
 ```diff
@@ -610,7 +610,7 @@ operações em bancos de dados. Se quisermos retornar todas as compras acima de
 R$100, podemos escrever uma query em SQL assim.
 
 ```sql
-SELECT id,valor,data
+SELECT id,valor,horario
 FROM compras
 WHERE valor > 100;
 ```
@@ -656,7 +656,7 @@ queremos_:
 * 2 entradas DNS
 
 Essa lista pode ser fornecida a uma ferramenta que irá interpretá-la e terá que
-se virar para determinar as chamadas de APIs necessárias para torna-la em
+se virar para determinar as chamadas de APIs necessárias para torná-la em
 realidade.
 
 Mas mesmo com uma linguagem declarativa nós temos o problema dos casos
@@ -673,8 +673,8 @@ febre, eu posso dizer que o meu estado é _doente_. Quando a febre passar o meu
 estado volta a ser _saudável_.
 
 Mas eu também tenho diversos outros parâmetros que descrevem o meu estado: fome,
-sono, alegre, sentado, viajando etc. A união de todos esses valores em ponto no
-tempo descrevem como eu estou naquele momento.
+sono, alegre, sentado, viajando etc. A união de todos esses valores em um ponto
+no tempo descrevem como eu estou naquele momento.
 
 Similarmente, uma VM também possui um estado. Ela pode estar _ligada_, com _32GB
 de RAM_, _4 cores de CPU_, _100GB de disco_, rodando o sistema operacional
@@ -693,7 +693,7 @@ serviço de nuvem de **estado real**.
 
 Portanto, o nosso desafio é reconciliar a diferença entre o **estado desejado**
 e o **estado real**. Precisamos encontrar as diferenças entre eles e executar as
-ações necessárias para tornar _o estado desejado em realidade_.
+ações necessárias para tornar o estado _desejado_ em _realidade_.
 
 Mas ainda não resolvemos todos os nossos problemas!
 
@@ -795,7 +795,7 @@ Com tudo criado, o nosso estado real agora terá os novos recursos criados.
   </tbody>
 </table>
 
-E como esses recursos foram criados usando a nossa ferramente, eles também fazem
+E como esses recursos foram criados usando a nossa ferramenta, eles também fazem
 parte do estado conhecido.
 
 <table style="display: table">
@@ -1550,7 +1550,7 @@ Ao rodar a nossa ferramenta...nada acontece! Como essa VM nova não faz parte do
 estado conhecido, a nossa ferramenta não sabe da existência dela.
 
 Se quisermos gerenciar essa nova VM com o nosso código, precisamos contar para
-a nossa ferramenta que ela existe, ou seja, precisamos adiciona-la ao estado
+a nossa ferramenta que ela existe, ou seja, precisamos adicioná-la ao estado
 conhecido.
 
 <table style="display: table">
